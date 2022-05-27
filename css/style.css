@@ -8,6 +8,7 @@
 body{
     background-color: #5b80a4;
     margin: 0;
+    font-family: prime-courier;
 }
 .header{
     background-color: var(--second-color);
@@ -19,6 +20,13 @@ body{
     font-family: prime-courier;
     font-size: 1.8rem;
 }
+.main-container{
+    display: grid;
+    height: 100vh;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fill, 260px);
+    column-gap: 10px;
+}
 .plus{
     border-radius: 50px;
     background-color: var(--second-color);
@@ -29,4 +37,53 @@ body{
     width: 50px;
     border: none;
     font-size: 1.2rem;
+}
+.form{
+    position: fixed;
+    top: 25%;
+    left: 38%;
+    display: none;
+    width: 500px;
+    background-color: var(--second-color);
+    border: 1px solid black;
+    padding: 5px;
+}
+fieldset{
+    display: grid;
+    row-gap: 5px;
+    border: none;
+    
+}
+legend{
+   font-weight: bold; 
+}
+.radios{
+    display: flex;
+    justify-self: center;
+    align-items: flex-end;
+}
+.card{
+    width: 250px;
+    position: relative;
+    height: 150px;
+    padding: 6px;
+    display: none;
+    margin-top: 50px;
+    margin-left: 10px;
+    background-color: var(--second-color);
+}
+.card > p{
+    border-bottom: 1px solid black;
+    margin: 10px 10px;
+}
+.addBook{
+    justify-self: center;
+}
+.close{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.read:hover, .close:hover{
+    cursor: pointer;
 }
