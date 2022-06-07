@@ -21,12 +21,8 @@ domElements.plus.addEventListener('click', plusListener);
 function plusListener(){
     domElements.form.style.display = 'block';
 }
-    const Book = {
-        title: '',
-        author: '',
-        pages: 0,
-        read: false,
-        init: function(title, author, pages, read){
+    class Book {
+        constructor(title, author, pages, read){
             this.title = title;
             this.author = author;
             this.pages = pages;
@@ -40,8 +36,7 @@ function plusListener(){
     }
     formElements.form.addEventListener('submit', BookListener);
 function BookListener(){
-    const newBook = Object.create(Book);
-    newBook.init(title.value, author.value, pages.value,formElements.yes.checked);
+    const newBook = new Book(title.value, author.value, pages.value, formElements.yes.checked);
     logicElements.bookArray.push(newBook);
     displayBooks();
     reset();
